@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: openenv-cloud_auditor
+Version: 0.1.0
+Summary: Cloud Auditor environment for OpenEnv
+Requires-Python: >=3.10
+Requires-Dist: openenv-core[core]>=0.2.1
+Requires-Dist: openai>=1.0.0
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.0.0; extra == "dev"
+Provides-Extra: train
+Requires-Dist: numpy>=1.26.0; extra == "train"
+Requires-Dist: matplotlib>=3.8.0; extra == "train"

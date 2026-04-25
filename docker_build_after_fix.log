@@ -1,0 +1,60 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 2.93kB 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for ghcr.io/meta-pytorch/openenv-base:latest
+#2 DONE 1.2s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 522B done
+#3 DONE 0.0s
+
+#4 [builder 1/9] FROM ghcr.io/meta-pytorch/openenv-base:latest@sha256:3e478c17bcdee6969218c03d0c1986bdb0db9abd4e763a9180b9014b3dde211a
+#4 resolve ghcr.io/meta-pytorch/openenv-base:latest@sha256:3e478c17bcdee6969218c03d0c1986bdb0db9abd4e763a9180b9014b3dde211a 0.0s done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 817B done
+#5 DONE 0.0s
+
+#6 [builder 3/9] RUN apt-get update &&     apt-get install -y --no-install-recommends git &&     rm -rf /var/lib/apt/lists/*
+#6 CACHED
+
+#7 [builder 8/9] RUN --mount=type=cache,target=/root/.cache/uv     if [ -f uv.lock ]; then         uv sync --frozen --no-install-project --no-editable;     else         uv sync --no-install-project --no-editable;     fi
+#7 CACHED
+
+#8 [builder 5/9] WORKDIR /app/env
+#8 CACHED
+
+#9 [builder 2/9] WORKDIR /app
+#9 CACHED
+
+#10 [builder 7/9] RUN if ! command -v uv >/dev/null 2>&1; then         curl -LsSf https://astral.sh/uv/install.sh | sh &&         mv /root/.local/bin/uv /usr/local/bin/uv &&         mv /root/.local/bin/uvx /usr/local/bin/uvx;     fi
+#10 CACHED
+
+#11 [builder 9/9] RUN --mount=type=cache,target=/root/.cache/uv     if [ -f uv.lock ]; then         uv sync --frozen --no-editable;     else         uv sync --no-editable;     fi
+#11 CACHED
+
+#12 [builder 4/9] COPY . /app/env
+#12 CACHED
+
+#13 [builder 6/9] RUN rm -rf /app/env/.venv
+#13 CACHED
+
+#14 [stage-1 3/4] COPY --from=builder /app/env/.venv /app/.venv
+#14 CACHED
+
+#15 [stage-1 4/4] COPY --from=builder /app/env /app/env
+#15 CACHED
+
+#16 exporting to image
+#16 exporting layers done
+#16 exporting manifest sha256:93b51ef7a2deea840de5c5c986311d6ded4b69b777cef160adb69a63ffb86cbe done
+#16 exporting config sha256:0f1476798ef852f6c96bf3f378f96376a294be0c98e2ad49c2252b2399e2e815 done
+#16 exporting attestation manifest sha256:49242cb0c4f55ac4b90e8a05c3cda55a465916d50a83ec2c0c5d84b9250bd024 0.0s done
+#16 exporting manifest list sha256:0c30a273f65bc349a2f7616f513a0248b5b38ebaa546cb9935b3d449f30ce888 0.0s done
+#16 naming to moby-dangling@sha256:0c30a273f65bc349a2f7616f513a0248b5b38ebaa546cb9935b3d449f30ce888 done
+#16 unpacking to moby-dangling@sha256:0c30a273f65bc349a2f7616f513a0248b5b38ebaa546cb9935b3d449f30ce888 0.0s done
+#16 DONE 0.1s

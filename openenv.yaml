@@ -1,0 +1,44 @@
+spec_version: 1
+name: cloudsecurityauditor-v1
+type: space
+runtime: fastapi
+app: server.app:app
+port: 8000
+tasks:
+  - id: task_easy_ssh
+    grader:
+      type: server.graders:EasyGrader
+  - id: task_easy_http
+    grader:
+      type: server.graders:EasyHttpGrader
+  - id: task_easy_encryption
+    grader:
+      type: server.graders:EasyEncryptionGrader
+  - id: task_medium_s3
+    grader:
+      type: server.graders:MediumGrader
+  - id: task_medium_iam
+    grader:
+      type: server.graders:MediumIamGrader
+  - id: task_medium_network
+    grader:
+      type: server.graders:MediumNetworkGrader
+  - id: task_medium_imdsv2
+    grader:
+      type: server.graders:MediumImdsv2Grader
+  - id: task_hard_iam
+    grader:
+      type: server.graders:HardGrader
+  - id: task_hard_iam_policy
+    grader:
+      type: server.graders:HardIamPolicyGrader
+  - id: task_hard_chain
+    grader:
+      type: server.graders:HardChainGrader
+  - id: task_hard_s3_guardrails
+    grader:
+      type: server.graders:HardS3GuardrailsGrader
+  - id: task_hard_compliance
+    grader:
+      type: server.graders:HardComplianceGrader
+
